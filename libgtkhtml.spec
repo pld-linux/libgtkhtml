@@ -1,17 +1,15 @@
-# TODO:
-# checl BRs
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
-Version:	1.99.8
+Version:	1.99.9
 Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
-BuildRequires:	gail-devel
-BuildRequires:	gnome-vfs2-devel
+BuildRequires:	gail-devel >= 0.13
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	libgnomecanvas-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/X11R6
@@ -29,6 +27,9 @@ Summary:	Header files for GTK HTML 2
 Summary(pl):	Pliki nag³ówkowe GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	gail-devel >= 0.13
+Requires:	libxml2-devel
+Requires:	libgnomecanvas-devel
 
 %description devel
 Header files for GTK HTML 2.
@@ -64,8 +65,6 @@ rm -rf $RPM_BUILD_ROOT
         DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-gzip -9nf AUTHORS ChangeLog INSTALL README NEWS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -74,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog INSTALL README NEWS
 %attr(755,root,root) %{_libdir}/*.so.*.*
 
 %files devel
