@@ -11,10 +11,13 @@ Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
 # Source0-md5:	c0ad6532ad7d1e36299dfc69ce5bf748
 URL:		http://gtkhtml2.codefactory.se/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	libxml2-devel >= %{libxml2_req}
 BuildRequires:	libgnomecanvas-devel >= %{libgnomecanvas_req}
+BuildRequires:	libtool
+BuildRequires:	libxml2-devel >= %{libxml2_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,8 +32,8 @@ Summary(pl):	Pliki nag³ówkowe GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gail-devel >= %{gail_req}
-Requires:	libxml2-devel >= %{libxml2_req}
 Requires:	libgnomecanvas-devel >= %{libgnomecanvas_req}
+Requires:	libxml2-devel >= %{libxml2_req}
 
 %description devel
 Header files for GTK HTML 2.
@@ -44,8 +47,8 @@ Summary(pl):	Statyczna biblioteka GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 Requires:	gail-static >= %{gail_req}
-Requires:	libxml2-static >= %{libxml2_req}
 Requires:	libgnomecanvas-static >= %{libgnomecanvas_req}
+Requires:	libxml2-static >= %{libxml2_req}
 
 %description static
 Static version of GTK HTML 2 library.
