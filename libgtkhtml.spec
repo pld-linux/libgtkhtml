@@ -1,6 +1,5 @@
-%define gail_req 1.6.0
-%define libxml2_req 2.5.10
-%define libgnomecanvas_req 2.6.0
+%define		gail_req		1.6.0
+%define		libxml2_req		2.5.10
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
@@ -15,9 +14,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	libgnomecanvas-devel >= %{libgnomecanvas_req}
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= %{libxml2_req}
+Requires:	gail >= %{gail_req}
+Requires:	libxml2 >= %{libxml2_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +32,6 @@ Summary(pl):	Pliki nag³ówkowe GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gail-devel >= %{gail_req}
-Requires:	libgnomecanvas-devel >= %{libgnomecanvas_req}
 Requires:	libxml2-devel >= %{libxml2_req}
 
 %description devel
@@ -46,9 +45,6 @@ Summary:	Static GTK HTML 2 library
 Summary(pl):	Statyczna biblioteka GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Requires:	gail-static >= %{gail_req}
-Requires:	libgnomecanvas-static >= %{libgnomecanvas_req}
-Requires:	libxml2-static >= %{libxml2_req}
 
 %description static
 Static version of GTK HTML 2 library.
@@ -86,9 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/gtkhtml-2.0
-%{_libdir}/*.la
 %attr(755,root,root) %{_libdir}/*.so
+%{_libdir}/*.la
+%{_includedir}/gtkhtml-2.0
 %{_pkgconfigdir}/*.pc
 
 %files static
