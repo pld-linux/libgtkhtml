@@ -13,7 +13,7 @@ URL:		http://gtkhtml2.codefactory.se/
 BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	libxml2-devel >= %{libxml2_req}
-BuildRequires:	libgnomecanvas-devel >= %{libgnomecanvsa_req}
+BuildRequires:	libgnomecanvas-devel >= %{libgnomecanvas_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,8 +64,7 @@ Statyczna wersja biblioteki GTK HTML 2.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir} 
+        DESTDIR=$RPM_BUILD_ROOT 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
