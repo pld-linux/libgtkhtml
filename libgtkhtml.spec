@@ -1,7 +1,9 @@
+# TODO:
+# checl BRs
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
-Version:	1.99.7
+Version:	1.99.8
 Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
