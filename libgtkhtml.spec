@@ -6,6 +6,7 @@ Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
+URL:		http://gtkhtml2.codefactory.se/
 BuildRequires:	gail-devel >= 0.16
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libxml2-devel >= 2.4.22
