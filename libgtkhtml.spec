@@ -1,15 +1,15 @@
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
-Version:	1.99.9
+Version:	2.0.0
 Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
-BuildRequires:	gail-devel >= 0.13
+BuildRequires:	gail-devel >= 0.15
 BuildRequires:	gtk+2-devel
 BuildRequires:	libxml2-devel
-BuildRequires:	libgnomecanvas-devel
+BuildRequires:	libgnomecanvas-devel >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/X11R6
@@ -53,8 +53,7 @@ Statyczna wersja biblioteki GTK HTML 2.
 %setup -q
 
 %build
-%configure \
-	--disable-gtk-doc
+%configure 
 
 %{__make}
 
@@ -63,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	pkgconfigdir=%{_pkgconfigdir} 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -73,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INSTALL README NEWS
+%doc AUTHORS ChangeLog TODO README NEWS
 %attr(755,root,root) %{_libdir}/*.so.*.*
 
 %files devel
