@@ -7,10 +7,8 @@ License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.0/%{name}-%{version}.tar.bz2
 URL:		http://gtkhtml2.codefactory.se/
-BuildRequires:	gail-devel >= 0.17
-BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	libxml2-devel >= 2.4.23
-BuildRequires:	libgnomecanvas-devel >= 2.0.2
+BuildRequires:	gail-devel
+BuildRequires:	libgnomecanvas-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         _prefix         /usr/X11R6
@@ -28,9 +26,8 @@ Summary:	Header files for GTK HTML 2
 Summary(pl):	Pliki nag³ówkowe GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gail-devel >= 0.16
-Requires:	libxml2-devel >= 2.4.23
-Requires:	libgnomecanvas-devel >= 2.0.2
+Requires:	gail-devel
+Requires:	libgnomecanvas-devel
 
 %description devel
 Header files for GTK HTML 2.
@@ -79,7 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/gtkhtml-2.0
-%attr(755,root,root) %{_libdir}/*.??
+%attr(755,root,root) %{_libdir}/*.so
+%{_libdir}/*.la
 %{_pkgconfigdir}/*.pc
 
 %files static
