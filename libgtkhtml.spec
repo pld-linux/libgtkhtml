@@ -9,6 +9,7 @@ Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	b9cc00d8aa4ec01d0ac67e468ba3c7fd
 URL:		http://gtkhtml2.codefactory.se/
 BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2.2.0
