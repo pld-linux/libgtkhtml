@@ -16,6 +16,7 @@ BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= %{libxml2_req}
+BuildRequires:	pkgconfig
 Requires:	gail >= %{gail_req}
 Requires:	libxml2 >= %{libxml2_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
