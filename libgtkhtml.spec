@@ -75,7 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/gtkhtml-2.0
-%attr(755,root,root) %{_libdir}/*.??
+%{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/*.so
 %{_pkgconfigdir}/*.pc
 
 %files static
