@@ -64,7 +64,7 @@ Statyczna wersja biblioteki GTK HTML 2.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure 
+%configure
 
 %{__make}
 
@@ -72,7 +72,7 @@ Statyczna wersja biblioteki GTK HTML 2.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT 
+        DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
