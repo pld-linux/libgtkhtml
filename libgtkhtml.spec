@@ -4,12 +4,12 @@
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
-Version:	2.3.2
+Version:	2.3.3
 Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
+# Source0-md5:	0a4a7700e345a6097b23d0875d802e1b
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9cc00d8aa4ec01d0ac67e468ba3c7fd
 URL:		http://gtkhtml2.codefactory.se/
 BuildRequires:	gail-devel >= %{gail_req}
 BuildRequires:	gtk+2-devel >= 2.2.0
