@@ -7,8 +7,8 @@ License:	GPL/LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://gtkhtml2.codefactory.se/
-BuildRequires:	gail-devel >= 0.16
-BuildRequires:	gtk+2-devel >= 2.0.5
+BuildRequires:	gail-devel >= 0.17
+BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	libxml2-devel >= 2.4.23
 BuildRequires:	libgnomecanvas-devel >= 2.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
