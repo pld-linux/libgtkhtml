@@ -1,7 +1,7 @@
 Summary:	GTK HTML widget 2
 Summary(pl):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
-Version:	2.2.1
+Version:	2.2.2
 Release:	1
 License:	GPL/LGPL
 Group:		X11/Libraries
