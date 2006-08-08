@@ -13,8 +13,10 @@ BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.9.0
 BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	libtool
+BuildRequires:	libselinux-devel
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libSM-devel
 Requires:	gail >= 1.9.0
 Requires:	libxml2 >= 1:2.6.26
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
