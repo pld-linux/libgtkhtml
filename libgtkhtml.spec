@@ -1,5 +1,5 @@
 Summary:	GTK HTML widget 2
-Summary(pl):	Widget GTK HTML dla GNOME2
+Summary(pl.UTF-8):   Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
 Version:	2.6.3
 Release:	7
@@ -24,12 +24,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GTK HTML Widget for the GNOME 2 platform.
 
-%description -l pl
+%description -l pl.UTF-8
 Widget GTK HTML dla platformy GNOME2.
 
 %package devel
 Summary:	Header files for GTK HTML 2
-Summary(pl):	Pliki nag≥Ûwkowe GTK HTML 2
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gail-devel >= 1.9.0
@@ -38,19 +38,19 @@ Requires:	libxml2-devel >= 1:2.6.26
 %description devel
 Header files for GTK HTML 2.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla GTK HTML 2.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla GTK HTML 2.
 
 %package static
 Summary:	Static GTK HTML 2 library
-Summary(pl):	Statyczna biblioteka GTK HTML 2
+Summary(pl.UTF-8):   Statyczna biblioteka GTK HTML 2
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of GTK HTML 2 library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki GTK HTML 2.
 
 %prep
