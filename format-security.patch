@@ -1,0 +1,40 @@
+--- libgtkhtml-2.11.1/libgtkhtml/a11y/htmlboxblocktextaccessible.c~	2015-03-22 13:54:32.000000000 +0200
++++ libgtkhtml-2.11.1/libgtkhtml/a11y/htmlboxblocktextaccessible.c	2015-03-22 13:54:34.104449611 +0200
+@@ -999,7 +999,7 @@
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_PIXELS_ABOVE_LINES,
+ 					      value);
+-	value = g_strdup_printf (atk_text_attribute_get_value (ATK_TEXT_ATTR_EDITABLE, 0));
++	value = g_strdup_printf ("%s", atk_text_attribute_get_value (ATK_TEXT_ATTR_EDITABLE, 0));
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_EDITABLE,
+ 					      value);
+@@ -1007,7 +1007,7 @@
+ 		int_value = 0;
+ 	else
+ 		int_value = 1;
+-	value = g_strdup_printf (atk_text_attribute_get_value (ATK_TEXT_ATTR_INVISIBLE, int_value));
++	value = g_strdup_printf ("%s", atk_text_attribute_get_value (ATK_TEXT_ATTR_INVISIBLE, int_value));
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_INVISIBLE,
+ 					      value);
+--- libgtkhtml-2.11.1/libgtkhtml/a11y/htmlboxtextaccessible.c~	2015-03-22 13:55:18.000000000 +0200
++++ libgtkhtml-2.11.1/libgtkhtml/a11y/htmlboxtextaccessible.c	2015-03-22 13:55:20.216748906 +0200
+@@ -945,7 +945,7 @@
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_PIXELS_ABOVE_LINES,
+ 					      value);
+-	value = g_strdup_printf (atk_text_attribute_get_value (ATK_TEXT_ATTR_EDITABLE, 0));
++	value = g_strdup_printf ("%s", atk_text_attribute_get_value (ATK_TEXT_ATTR_EDITABLE, 0));
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_EDITABLE,
+ 					      value);
+@@ -953,7 +953,7 @@
+ 		int_value = 0;
+ 	else
+ 		int_value = 1;
+-	value = g_strdup_printf (atk_text_attribute_get_value (ATK_TEXT_ATTR_INVISIBLE, int_value));
++	value = g_strdup_printf ("%s", atk_text_attribute_get_value (ATK_TEXT_ATTR_INVISIBLE, int_value));
+ 	attrib_set = gail_misc_add_attribute (attrib_set,
+ 					      ATK_TEXT_ATTR_INVISIBLE,
+ 					      value);
