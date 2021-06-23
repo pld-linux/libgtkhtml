@@ -3,12 +3,12 @@ Summary(pl.UTF-8):	Widget GTK HTML dla GNOME2
 Name:		libgtkhtml
 Version:	2.11.1
 Release:	6
-License:	GPL/LGPL
+License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgtkhtml/2.11/%{name}-%{version}.tar.bz2
+Source0:	https://download.gnome.org/sources/libgtkhtml/2.11/%{name}-%{version}.tar.bz2
 # Source0-md5:	a1d1a197dcff8c4571659deef5495e24
 Patch0:		format-security.patch
-URL:		http://gtkhtml2.codefactory.se/
+URL:		https://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.9.0
@@ -62,12 +62,14 @@ Statyczna wersja biblioteki GTK HTML 2.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
