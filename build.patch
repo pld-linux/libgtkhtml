@@ -1,0 +1,71 @@
+--- libgtkhtml-2.11.1/libgtkhtml/dom/core/dom-node.c~	2007-01-03 22:07:26.000000000 +0100
++++ libgtkhtml-2.11.1/libgtkhtml/dom/core/dom-node.c	2025-08-24 22:49:52.495737537 +0200
+@@ -608,7 +608,7 @@ dom_Node_addEventListener (DomEventTarge
+ 	/* The event listener did not exist, so add it */
+ 	info = g_new (DomEventListenerInfo, 1);
+ 	info->type = g_strdup (type);
+-	info->listener = g_object_ref (G_OBJECT (listener));
++	info->listener = (DomEventListener *)g_object_ref (G_OBJECT (listener));
+ 	info->useCapture = useCapture;
+ 
+ 	handler_list = g_list_append (handler_list, info);
+@@ -726,7 +726,7 @@ dom_Node_dispatchEvent (DomEventTarget *
+ 			/* Set current target on event before invoking listeners */
+ 			if (event->currentTarget)
+ 				g_object_unref (event->currentTarget);
+-			event->currentTarget = g_object_ref (path[i]);
++			event->currentTarget = (DomEventTarget *)g_object_ref (path[i]);
+ 
+ 			dom_Node_invokeListener (DOM_EVENT_TARGET (path[i]), event->type, event, TRUE);
+ 
+@@ -741,7 +741,7 @@ dom_Node_dispatchEvent (DomEventTarget *
+ 		/* Set current target on event before invoking listeners */
+ 		if (event->currentTarget)
+ 			g_object_unref (event->currentTarget);
+-		event->currentTarget = g_object_ref (path[0]);
++		event->currentTarget = (DomEventTarget *)g_object_ref (path[0]);
+ 
+ 		dom_Node_invokeListener (DOM_EVENT_TARGET (path[0]), event->type, event, TRUE);
+ 
+@@ -751,7 +751,7 @@ dom_Node_dispatchEvent (DomEventTarget *
+ 			for (i = 1; i < n_path; i++) {
+ 				if (event->currentTarget)
+ 					g_object_unref (event->currentTarget);
+-				event->currentTarget = g_object_ref (path[i]);
++				event->currentTarget = (DomEventTarget *)g_object_ref (path[i]);
+ 
+ 				dom_Node_invokeListener (DOM_EVENT_TARGET (path[i]), event->type, event, FALSE);
+ 
+--- libgtkhtml-2.11.1/libgtkhtml/dom/html/dom-htmlformelement.c~	2007-01-03 22:07:25.000000000 +0100
++++ libgtkhtml-2.11.1/libgtkhtml/dom/html/dom-htmlformelement.c	2025-08-24 22:50:41.589357830 +0200
+@@ -227,7 +227,7 @@ dom_HTMLFormElement__get_elements (DomHT
+ 	collection->length = dom_HTMLFormElement__get_elements_length;
+ 	collection->namedItem = dom_HTMLFormElement__get_elements_namedItem;
+ 	
+-	collection->node = g_object_ref (G_OBJECT (form));
++	collection->node = (DomNode *)g_object_ref (G_OBJECT (form));
+ 	
+ 	return collection;
+ }
+--- libgtkhtml-2.11.1/libgtkhtml/layout/htmlboxtext.c~	2007-01-03 22:07:27.000000000 +0100
++++ libgtkhtml-2.11.1/libgtkhtml/layout/htmlboxtext.c	2025-08-24 22:53:31.423683871 +0200
+@@ -146,7 +146,7 @@ html_box_text_finalize (GObject *self)
+ 
+ 	master = text->master;
+ 	if (master) {
+-		html_box_text_destroy_slaves (text);
++		html_box_text_destroy_slaves ((HtmlBox *)text);
+ 		html_box_text_free_master (master);
+ 		g_free (master);
+ 		text->master = NULL;
+--- libgtkhtml-2.11.1/libgtkhtml/layout/htmlstylebackground.c~	2007-01-03 22:07:27.000000000 +0100
++++ libgtkhtml-2.11.1/libgtkhtml/layout/htmlstylebackground.c	2025-08-24 22:54:43.414104665 +0200
+@@ -105,7 +105,7 @@ html_style_set_background_image (HtmlSty
+ 
+ 		if (style->background->refcount > 1)
+ 			html_style_set_style_background (style, html_style_background_dup (style->background));
+-		style->background->image = g_object_ref (G_OBJECT (image));
++		style->background->image = (HtmlImage *)g_object_ref (G_OBJECT (image));
+ 	}
+ }
+ 
